@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import * as OrbitControls from 'three-orbitcontrols';
-//import { light2, light3, light4 } from './direct_light.js';
+import { light2, light3, light4 } from './direct_light.js';
 import { mixer, action, gltfLoader2 } from './loader';
 
 export const scene = new THREE.Scene();
@@ -12,6 +12,13 @@ renderer.shadowMap.enabled = true;
 document.body.appendChild(renderer.domElement);
 
 scene.background = new THREE.Color( 0xFFFFFF );
+
+scene.add(light2);
+scene.add(light2.target);
+scene.add(light3);
+scene.add(light3.target);
+scene.add(light4);
+scene.add(light4.target);
 
 camera.position.z = 8;
 camera.position.y = 1.5;
